@@ -124,9 +124,9 @@ void handle_error(t_info *info, const char *err_msg)
 
 void init_centerlized_spaces(t_info *info)
 {
-    info->centerlized_spaces = malloc (side_spaces + null_term_place);
+    info->centerlized_spaces = malloc (SIDE_SPACES + NULL_TERM_PLACE);
     if (info->centerlized_spaces == NULL)
-        handle_error(info, err_msg_malloc);
+        handle_error(info, ERR_MSG_MALLOC);
     int i = 0;
     while (i < 58)
         info->centerlized_spaces[i++] = ' ';
@@ -490,7 +490,7 @@ int main() {
 
     init_info(&info);
     clear_screen();
-    pop_up(msg_press_key, &info);
+    pop_up(MSG_PRESS_KEY, &info);
     getch();
     while (1) {
         display(&info);    

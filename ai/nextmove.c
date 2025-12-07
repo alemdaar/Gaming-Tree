@@ -5,7 +5,6 @@ int possible_size(t_ai *ai, t_info *info)
     // 
     ai->size = 0;
     int i = 0;
-
     while (i < 2)
     {
         int j = 0;
@@ -23,7 +22,7 @@ void init_nextmove(t_ai *ai, t_info *info)
 {
     // 
     possible_size(ai, info);
-    init_index(ai, info);
+    // init_index(ai, info);
 }
 
 int nextmove(t_info * info, t_ai *ai)

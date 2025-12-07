@@ -1,10 +1,10 @@
 #include "library.h"
 
-void init_imagine(t_ai *ai, t_info *info)
-{
-    // 
-}
-
+// void init_imagine(t_ai *ai, t_info *info)
+// {
+//     // 
+// }
+w
 int vertical_finish(t_info *info, t_ai *ai, int fight)
 {
     t_cord last;
@@ -278,7 +278,7 @@ void expectaions(t_cord index, t_info *info, t_ai *ai, int size)
 
 int imagine(t_info *info, t_ai *ai)
 {
-    init_imagine(ai, info);
+    // init_imagine(ai, info);
     int i = 0;
     while (i < 2)
     {
@@ -295,7 +295,7 @@ int imagine(t_info *info, t_ai *ai)
     int i = 0;
     while (i < ai->size)
     {
-        t_cord index = next_place_in_order(info->square);
+        t_cord index = next_place_in_ordernext(info->square);
         expectaions(index, info, ai, ai->size);
         i++;
     }

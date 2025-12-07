@@ -16,6 +16,7 @@
 #define SUCCESS 0
 #define TRUE 1
 #define FAILED 1
+#define LEN_SQUARES 3
 #define FINISH_VER 5
 #define FINISH_HOR 6
 #define FINISH_XRD 7
@@ -23,14 +24,14 @@
 #define ATTACK 9
 #define DEFENSE 10
 #define DIDNT_HIT_3 33
-#define side_spaces 58
-#define null_term_place 58
-#define LEN_SQUARES 3
+#define SIDE_SPACES 58
+#define NULL_TERM_PLACE 58
+
 
 
 // define strings
-#define msg_press_key "Press any key (arrow keys or q to quit):\n\n\n"
-#define err_msg_malloc "allocation failed when using malloc\n"
+#define MSG_PRESS_KEY "Press any key (arrow keys or q to quit):\n\n\n"
+#define ERR_MSG_MALLOC "allocation failed when using malloc\n"
 
 
 
@@ -68,14 +69,17 @@ typedef struct s_cord
 
 typedef struct s_possibilities
 {
+    int level;
     t_cord cord;
     t_stats stats;
-    t_cord buffer[5040];
+    // t_cord buffer[5040];
+    struct s_possibilities** buffer;
     int index;
 }   t_possibilities;
 
 typedef struct s_ai
 {
+    struct s_ai fake_ai;
     t_possibilities possib[8]; // the next 8 possible ways that I have agains that first move
     t_cord first_move; // this is the first move that the user will move
     t_cord finish_him; //the variable that contains xo of the next move to win the game
